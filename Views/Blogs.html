@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 ng-bind="title"></h1>
+
+                <button type="button"
+                        class="btn btn-success"
+                        data-toggle="modal"
+                        data-target="#newBlogModal">
+                    Add blog
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"
+                    ng-repeat="blog in blogsList track by $index">
+                <h1 ng-bind="blog.name"></h1>
+                <p ng-bind="blog.description"></p>
+                <button type="button" ng-click="removeBlog($index)">Remove</button>
+                <button type="button" ng-click="go('Blogs/' + blog.id)">Blog -></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'Views/Partials/NewBlogModal.html'"></div>
