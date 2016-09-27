@@ -12,8 +12,6 @@ angular.module("blogModule")
                 return blog.id == $routeParams.id;
             })[0];
 
-            console.log($scope.blog);
-
             $scope.addComment = function () {
                 $scope.newComment.date = new Date().toLocaleString();
                 $scope.blog.comments.push($scope.newComment);
