@@ -25,6 +25,12 @@ angular.module("blogModule")
                     controller: "BlogController",
                     caseInsensitiveMatch: true,
                     activeTab: "Blogs"
+                })
+                .when("/About", {
+                    templateUrl: "Views/About.html",
+                    controller: "AboutController",
+                    caseInsensitiveMatch: true,
+                    activeTab: "About"
                 });
         }
     ]);

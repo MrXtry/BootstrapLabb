@@ -6,8 +6,10 @@ angular.module("blogModule")
         function ($scope) {
             $scope.title = "Blogs";
             $scope.newBlog = {
+                author: "anon",
                 name: "",
-                description: ""
+                description: "",
+                comments: []
             };
             $scope.blogsList = $scope.blogs;
 
@@ -17,6 +19,10 @@ angular.module("blogModule")
                 else
                     $scope.newBlog.id = $scope.blogs[$scope.blogs.length - 1].id + 1;
 
+                console.log($scope.newBlog.author);
+
+                $scope.newBlog.date = new Date().toLocaleString();
+                console.log($scope.newBlog);
                 $scope.blogs.push($scope.newBlog);
                 $scope.newBlog = {};
 

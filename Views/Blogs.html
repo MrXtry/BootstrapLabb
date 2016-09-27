@@ -12,15 +12,76 @@
                 </button>
             </div>
         </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4" ng-repeat="blog in blogsList track by $index">
+                        <div class="panel panel-success">
+                            <div class="panel-heading" ng-bind="blog.name"></div>
+                            <div class="panel-body"><img src="http://placehold.it/150x80" class="img-responsive" style="width:100%" alt="Image" /></div>
+
+                            <div class="panel-footer col-md-12">
+                                <div class="row">
+
+                                    <div class="col-md-9">
+                                        <!--<div class="col-md-6"><h6>Author:</h6></div>-->
+                                        <div class="col-md-12"><h6 ng-bind="blog.author"></h6></div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="col-md-6">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeBlog($index)"></span>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" ng-click="go('Blogs/' + blog.id)"></span>
+                                            <!--<button type="button" ng-click="go('Blogs/' + blog.id)">Blog -></button>-->
+                                        </div>
+                                    </div>
+                                    <!--<span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeBlog($index)"></span>
+                                    <button type="button" ng-click="removeBlog($index)">Remove</button>
+                                    <button type="button" ng-click="go('Blogs/' + blog.id)">Blog -></button>-->
+
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 ng-bind="title"></h1>
+
+                <button type="button"
+                        class="btn btn-success"
+                        data-toggle="modal"
+                        data-target="#newBlogModal">
+                    Add blog
+                </button>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4"
                     ng-repeat="blog in blogsList track by $index">
                 <h1 ng-bind="blog.name"></h1>
                 <p ng-bind="blog.description"></p>
+                <p ng-bind="blog.author"></p>
+                <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeBlog($index)"></span>
                 <button type="button" ng-click="removeBlog($index)">Remove</button>
                 <button type="button" ng-click="go('Blogs/' + blog.id)">Blog -></button>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <div ng-include="'Views/Partials/NewBlogModal.html'"></div>
